@@ -7,7 +7,6 @@ import formatBooks from '../utils/formatBooks.js';
 
 const getAllBooksHandler = async (request, h) => {
   const { name, reading, finished } = request.query;
-
   const allBooks = formatBooks(Books);
 
   if (typeof name === 'string') {
@@ -41,8 +40,8 @@ const getBooksByName = async (name, h) => {
 
 const getReadBooks = async (isRead, h) => {
   const status = isRead == 1 ? true : false;
-
   let filteredBooks = Books.filter((book) => book.reading === status);
+
   filteredBooks = formatBooks(filteredBooks);
 
   return sendSuccess(h, 200, { books: filteredBooks }, 'finished book(s)');
@@ -50,8 +49,8 @@ const getReadBooks = async (isRead, h) => {
 
 const getFinishedBooks = async (isFinished, h) => {
   const status = isFinished == 1 ? true : false;
-
   let filteredBooks = Books.filter((book) => book.finished === status);
+
   filteredBooks = formatBooks(filteredBooks);
 
   return sendSuccess(h, 200, { books: filteredBooks }, 'read book(s)');
@@ -143,7 +142,6 @@ const updateBookHandler = async (request, h) => {
 
   const bookId = request.params.bookId;
   const updatedAt = new Date().toISOString();
-
   const bookIndex = Books.findIndex((book) => book.id === bookId);
 
   if (name === null || typeof name === 'undefined') {
