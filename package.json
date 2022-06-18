@@ -1,0 +1,25 @@
+{
+  "name": "bookshelf-api",
+  "version": "1.0.0",
+  "description": "a simple api for managing books",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "eslint": "npx eslint --ext js --fix ./"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/hapi": "^20.2.2",
+    "dotenv": "^16.0.1",
+    "nanoid": "^4.0.0"
+  },
+  "devDependencies": {
+    "eslint": "^8.18.0",
+    "eslint-config-google": "^0.14.0",
+    "nodemon": "^2.0.16"
+  }
+}
