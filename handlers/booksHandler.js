@@ -182,10 +182,6 @@ const deleteBookHandler = async (request, h) => {
   const { bookId } = request.params;
   const bookIndex = Books.findIndex((book) => book.id === bookId);
 
-  if (!bookId) {
-    return sendFailed(h, 401, 'Buku gagal dihapus. Id tidak ditemukan');
-  }
-
   if (bookIndex === -1) {
     return sendFailed(h, 404, 'Buku gagal dihapus. Id tidak ditemukan');
   }
