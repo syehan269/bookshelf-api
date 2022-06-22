@@ -1,6 +1,12 @@
 'use-strict';
 
-import { getAllBooksHandler, addBookHandler, getByIdBooksHandler, updateBookHandler, deleteBookHandler } from './handlers/booksHandler.js';
+import {
+  getAllBooksHandler,
+  addBookHandler,
+  getByIdBooksHandler,
+  updateBookHandler,
+  deleteBookHandler,
+} from './handlers/booksHandler.js';
 
 const routes = [
   {
